@@ -1,0 +1,182 @@
+Total: 
+
+Perf Test (weight 15%): 0/12
+
+	0/12 PUT/GET/mixed requests
+		Performance ranked against your classmates systems. 
+		We will run LoadTest/ab/... with some workloads of our choosing.
+csc409ta@dh2010pc05:~/a1/starterCode/LoadTest$ time ./LoadTest2.bash 
+0
+11
+
+real	0m10.738s
+user	0m17.428s
+sys	0m3.638s
+csc409ta@dh2010pc05:~/a1/starterCode/LoadTest$ time ./LoadTest1.bash 
+0
+6
+
+real	0m5.828s
+user	0m14.100s
+sys	0m2.797s
+
+
+Development (weight 5%): 0/5
+
+	0/3 Code quality
+		[0] 1 Clean code. No commented out code, proper indentation
+		[0] 1 Proper Names. Classes, variables, functions
+		[0] 1 Structure. Proper use of classes, functions, resources
+
+	0/2 Git history
+		[0] 1 Proper commit messages
+		[0] 1 Clean git history. If branches are used, they must be merged on completion.
+
+Report (weight 25%): 0/27
+
+	0/17 Discussing the system's architecture
+		0/3 Diagram showing
+			[0] 1 Application system
+			[0] 1 Monitoring system
+			[0] 1 Data flow
+
+		0/14 Discussion of each of the following with respect to your system.
+			For each point, as appropriate, show an appropriate diagram, 
+                        list performance guarantees, discuss code/architecture choices.
+
+			Example: 
+
+			Availability: 
+				- the availability guarantees your system provides
+				- the architectural choices made to implement this
+
+			Data Partitioning:
+				- diagram explaining how data is partitioned
+				- outline how your code implements this, for example,
+  				  if you hash, then which hash algorithm
+
+
+			[0] 1 Consistensy
+			[0] 1 Availablity
+			[0] 1 Parition tolarance
+			[0] 1 Data paritioning
+			[0] 1 Data replication
+			[0] 1 Load balancing
+			[0] 1 Caching
+			[0] 1 Process disaster recovery
+			[0] 1 Data disaster recovery
+			[0] 1 Orchestration
+			[0] 1 Healthcheck
+			[0] 1 Horizontal scalability
+			[0] 1 Vertical scalability
+			[0] 1 Well formatted document
+
+	0/4 Discussing the system's performance
+		[0] 1 Graph showing performance of system under load1
+		[0] 1 Analysis of system performance under load1
+		[0] 1 Graph showing performance of system under load2
+		[0] 1 Analysis of system performance under load2
+	
+	0/4 Discussing the system's scalability
+		[0] 1 Number of hosts vs read requests per second
+		[0] 1 Number of hosts vs write requests per second
+		[0] 1 Number of hosts vs data stored
+
+	0/2 Discussion of the tools used during testing. Listing them 
+		is not enough. You must define each tool used, and how you used it
+
+Demo (weight 45%): /29
+
+	7/7 Functionality
+		3/3 Long to Short (PUT)
+			[1] 1 Good request. 201
+			Status was 200, not 201
+			[1] 1 Bad request. 400
+			[1] 1 UI shows success or failure messages
+		3/3 Short to Long (GET)
+			[1] 1 Good request. 307
+			[1] 1 Bad request. 404
+			[1] 1 UI shows success or failure messages
+		1/1 UI design
+			[1] 1 Simple and clean user interface
+
+	3.5/5 Monitoring
+    		[1] 1 Monitoring system watching the health of the application system
+    		[1] 1 Monitoring system is fault tolerant
+    		[1] 1 UI showing the status of the hosts
+    		[0.5] 1 UI shows up to date status
+    		[1] 1 Simple and clean user interface
+		
+		monitoring status is recorded to files every x seconds
+		can be read by terminal when a request is sent
+		no web UI
+
+
+	4.5/7 Disaster recovery
+		0.5/1 Load balancer recovery
+			[0.5] 1 Load balancer recovers/heals from a process dying
+			each node has a proxy server, but not automated recovery
+
+		0/2 Application server recovery
+			[0] 1 Url shortner recovers/heals from a process dying
+				monitor reports process is dead, no effort to revive process
+				data is replicated so it still works but no healing
+			[0] 1 Url shortner recovers/heals from a host dying
+				data is not replicated to another host but it remains accessible 
+
+		4/4 Data recovery
+			[1] 1 Data is persistent after the system recovers/heals from a process dying
+			[1] 1 Data is persistent after the system recovers/heals from a host dying
+			[1] 1 The application responds after a database file gets corrupt
+			[1] 1 The application responds after a database file gets deleted
+
+	4/6 Scalability
+		[1] 1 System can be run from empty with n nodes
+		[1] 1 System scales from n to n+1 nodes with minimal intervention
+		[0] 1 System scales from n to n+1 nodes without downtime
+		[1] 1 System makes good use of additional compute
+		[1] 1 System makes good use of additional storage
+		[0] 1 System makes good use of additional ram
+
+	2/4 Orchestration
+		[1] 1 Automate launching the cluster onto the given systems
+		[0] 1 Automate adding a host to the cluster
+		[0] 1 Automate removing a host from the cluster
+		[1] 1 Automate shutdowning the cluster
+
+		automated script for adding a host starts and stops the cluster
+		
+
+Individual Questions (weight 10%): 5/5
+
+	3/3 Pick one of the following per group member
+		Consistency (member name)
+			[1] 1 What does it mean for a system to be consistent
+			[1] 1 How is your consistency affected by adding hosts
+			[1] 1 How is your consistency affected by removing hosts
+		Availablity (member name)
+			[0] 1 What does it mean for a system to be available
+			[0] 1 How is your availablity affected by adding hosts
+			[0] 1 How is your availablity affected by removing hosts
+		Fault Tolerance (member name)
+			[0] 1 What does it mean for a system to be fault tolerant
+			[0] 1 How is your fault tolerance affected by adding hosts
+			[0] 1 How is your fault tolerance affected by removing hosts
+
+	2/2 Pick two of the following per group member
+		Disaster recovery (member name)
+			[0] 1 How does your system recover/heals from a host dying
+		Caching (member name)
+			[0] 1 How does your system leverage caching to improve performance
+			caching wasn't used :(
+		Horizontal scalability (member name)
+			[0] 1 How does your system leverage more hosts
+		Data paritioning (member name)
+			[0] 1 How is your data paritioned between hosts
+		Data replication (member name)
+			[1] 1 How is your data replicated between hosts
+		Monitoring system (member name)
+			[1] 1 How does your monitoring system monitor the status of your application system
+
+Members:
+

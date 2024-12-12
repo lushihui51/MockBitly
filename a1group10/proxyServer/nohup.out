@@ -1,0 +1,13 @@
+dh2010pc05 starting proxy for: 
+dh2010pc01:3000
+dh2010pc05:3000
+dh2010pc09:3000
+dh2010pc10:3000
+On port: 8080
+dh2010pc05 starting proxy for: 
+dh2010pc01:3000
+dh2010pc05:3000
+dh2010pc09:3000
+dh2010pc10:3000
+On port: 8080
+java.net.BindException: Address already in use

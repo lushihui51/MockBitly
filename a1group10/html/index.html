@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+	<h1>URL Shortener</h1>
+
+	<form id="urlShortenerForm">
+		<label for="short">Short:</label><br>
+		<input type="text" id="short" name="short"><br>
+		<label for="long">Long:</label><br>
+		<input type="text" id="long" name="long"><br><br>
+		<button type="submit">Submit</button>
+	</form>
+
+	<script>
+		document.getElementById('urlShortenerForm').addEventListener('submit', function (event) {
+			event.preventDefault();
+			const shortURL = document.getElementById('short').value;
+			const longURL = document.getElementById('long').value;
+			const url = `http://localhost:8080/?short=${encodeURIComponent(shortURL)}&long=${encodeURIComponent(longURL)}`;
+			fetch(url, {
+				method: 'PUT',
+			})
+		});
+	</script>
+</body>
+
+</html>
